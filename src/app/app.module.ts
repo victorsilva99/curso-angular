@@ -8,19 +8,20 @@ import { MeuPrimeiro2Component } from './meu-primeiro2/meu-primeiro2.component';
 import { CursosModule } from './cursos/cursos.module';
 import { CursosService } from './cursos/cursos.service';
 import { DataBindingComponent } from './data-binding/data-binding.component';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
 @NgModule({
   declarations: [
     AppComponent,
     MeuPrimeiroComponent,
-    MeuPrimeiro2Component
     MeuPrimeiro2Component,
     DataBindingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    CursosModule
+    CursosModule,
+    TooltipModule.forRoot()
   ],
   providers: [CursosService],
   bootstrap: [AppComponent]
