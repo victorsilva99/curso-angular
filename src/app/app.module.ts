@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -16,10 +17,12 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
     MeuPrimeiroComponent,
     MeuPrimeiro2Component,
     DataBindingComponent
+    DataBindingComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     CursosModule,
     TooltipModule.forRoot()
   ],
