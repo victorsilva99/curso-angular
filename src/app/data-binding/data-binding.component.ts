@@ -27,6 +27,9 @@ export class DataBindingComponent implements OnInit {
     }
   }
 
+  nomeDoCurso: string = 'Angular';
+  nomeDoOutroCurso: string = 'C#';
+
   constructor() {
 
   }

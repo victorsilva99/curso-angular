@@ -66,7 +66,7 @@
                 mouse sobre mim</span>
         </div>
     </article> -->
-    <section class="two-way-binding">
+    <!-- <section class="two-way-binding">
         <article>
             <h3>Two-way data binding</h3>
             <div>
@@ -89,6 +89,16 @@
                 <input type="text" [(ngModel)]="pessoa.end.rua" />
                 <input type="text" [(ngModel)]="pessoa.end.numero" />
             </div>
+        </article>
+    </section> -->
+    <section class="input-output-properties">
+        <article>
+            <h3>
+                Input/Output Properties
+            </h3>
+
+            <app-curso [a]="nomeDoCurso"></app-curso>
+            <app-curso [b]="nomeDoOutroCurso"></app-curso>
         </article>
     </section>
 </section>
