@@ -12,6 +12,7 @@ import { DataBindingComponent } from './data-binding/data-binding.component';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { InputPropertyComponent } from './input-property/input-property.component';
 import { OutputPropertieComponent } from './output-propertie/output-propertie.component';
+import { CicloComponent } from './ciclo/ciclo.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { OutputPropertieComponent } from './output-propertie/output-propertie.co
     MeuPrimeiro2Component,
     DataBindingComponent,
     InputPropertyComponent,
-    OutputPropertieComponent
+    OutputPropertieComponent,
+    CicloComponent
   ],
   imports: [
     BrowserModule,
