@@ -11,6 +11,7 @@ import { CursosService } from './cursos/cursos.service';
 import { DataBindingComponent } from './data-binding/data-binding.component';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { InputPropertyComponent } from './input-property/input-property.component';
+import { OutputPropertieComponent } from './output-propertie/output-propertie.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { InputPropertyComponent } from './input-property/input-property.componen
     MeuPrimeiroComponent,
     MeuPrimeiro2Component,
     DataBindingComponent,
-    InputPropertyComponent
+    InputPropertyComponent,
+    OutputPropertieComponent
   ],
   imports: [
     BrowserModule,

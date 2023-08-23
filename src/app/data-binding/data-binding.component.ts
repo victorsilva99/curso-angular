@@ -30,8 +30,14 @@ export class DataBindingComponent implements OnInit {
   nomeDoCurso: string = 'Angular';
   nomeDoOutroCurso: string = 'C#';
 
+  valorInicial = 10;
+
   constructor() {
 
+  }
+
+  onMudouValor(evento: any) {
+    console.log(evento);
   }
 
   getValor(): number {
