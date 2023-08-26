@@ -1,106 +1,144 @@
 <section class="property-biding">
-    <!-- <article>
-        <h3>Interpolation / Interpolação </h3>
-        <p>String redenrizada com Interpolação: {{ url }}</p>
-        <p>Resultado de 1 + 1 é: {{ 1 + 1 }}</p>
-        <p>Resultado de 1 + 1 não é: {{ 1 + 1 + getValor()}}</p>
-        <p>Curso de Angular e gosto do curso: {{ cursoAngular && getCurtirCurso()}}</p>
-    </article>
+  <article>
+    <h3>Interpolation / Interpolação</h3>
+    <p>String renderizada com Interpolação: {{ url }}</p>
+    <p>Resultado de 1 + 1 é: {{ 1 + 1 }}</p>
+    <p>Resultado de 1 + 1 não é: {{ 1 + 1 + getValor() }}</p>
+    <p>
+      Curso de Angular e gosto do curso: {{ cursoAngular && getCurtirCurso() }}
+    </p>
+  </article>
 
+  <article>
+    <h3>Property Binding</h3>
+    <img src="{{ urlDaImagem }}" alt="Imagem sem descrição" />
+    <img [src]="urlDaImagem" alt="Imagem sem descrição" />
+    <img bind-src="urlDaImagem" alt="Imagem sem descrição" />
+  </article>
+
+  <article>
+    <h3>Class e Style Binding</h3>
+    <div>
+      Selecione uma classe:
+      <select #classe (change)="(0)">
+        <option value="alert-success">Sucesso</option>
+        <option value="alert-info">Info</option>
+        <option value="alert-warning">Alerta</option>
+        <option value="alert-danger">Erro</option>
+      </select>
+      <br /><br />
+
+      <div class="alert {{ classe.value }}" role="alert">
+        Texto colorido conforme valor do combobox
+      </div>
+
+      <div
+        class="alert"
+        role="alert"
+        [class.alert-success]="classe.value === 'alert-success'"
+      >
+        A simple success alert—check it out!
+      </div>
+      <div
+        class="alert"
+        role="alert"
+        [class.alert-info]="classe.value === 'alert-info'"
+      >
+        A simple Info alert—check it out!
+      </div>
+      <div
+        class="alert"
+        role="alert"
+        [class.alert-warning]="classe.value === 'alert-warning'"
+      >
+        A simple Alerta alert—check it out!
+      </div>
+      <div
+        class="alert"
+        role="alert"
+        [class.alert-danger]="classe.value === 'alert-danger'"
+      >
+        A simple Erro alert—check it out!
+      </div>
+
+      <div
+        class="alert alert-danger"
+        role="alert"
+        [style.display]="classe.value === 'alert-danger' ? 'block' : 'none'"
+      >
+        Esse texto somente aparece em caso de erro.
+      </div>
+    </div>
+  </article>
+
+  <article>
+    <h3>Event Binding</h3>
+    <div>
+      <button (click)="botaoClicado()" class="btn btn-primary">
+        Me clique
+      </button>
+
+      <br /><br />
+      <input
+        #campoinput
+        type="text"
+        (keyup)="onKeyUp($event)"
+        (keyup.enter)="salvarValor(campoinput.value)"
+        (blur)="salvarValor(campoinput.value)"
+      />
+      <p>Valor atual: {{ valorAtual }}</p>
+      <p>Valor salvo: {{ valorSalvo }}</p>
+
+      <br />
+      <span
+        (mouseover)="onMouseOverOut()"
+        (focus)="onMouseOverOut()"
+        (mouseout)="onMouseOverOut()"
+        (blur)="onMouseOverOut()"
+        [class.highlight]="isMouseOver"
+        >Passe o mouse sobre mim e me dê foco</span
+      >
+    </div>
+  </article>
+
+  <section class="two-way-binding">
     <article>
-        <h3>Property Binding</h3>
-        <img src="{{ urlDaImagem }}">
-        <img [src]="urlDaImagem">
-        <img bind-src="urlDaImagem">
+      <h3>Two-way data binding</h3>
+      <div>
+        <input #input type="text" [value]="nome" (input)="nome = input.value" />
+
+        <input type="text" [ngModel]="nome" (ngModelChange)="nome = $event" />
+
+        <input type="text" [(ngModel)]="nome" />
+
+        <p>Você digitou: {{ nome }}</p>
+      </div>
+
+      <div>
+        <p>
+          Meu nome é {{ pessoa.nome }}, tenho {{ pessoa.idade }} e moro na rua
+          {{ pessoa.end.rua }},
+          {{ pessoa.end.numero }}
+        </p>
+        <input type="text" [(ngModel)]="pessoa.nome" />
+        <input type="text" [(ngModel)]="pessoa.idade" />
+        <input type="text" [(ngModel)]="pessoa.end.rua" />
+        <input type="text" [(ngModel)]="pessoa.end.numero" />
+      </div>
     </article>
+  </section>
 
+  <section class="input-output-properties">
     <article>
-        <h3>Class e Style Binding</h3>
-        <div>
-            Selecione uma classe:
-            <select #classe (change)="0">
-                <option value="alert-success">Sucesso</option>
-                <option value="alert-info">Info</option>
-                <option value="alert-warning">Alerta</option>
-                <option value="alert-danger">Erro</option>
-            </select>
-            <br><br>
+      <h3>Input/Output Properties</h3>
 
-            <div class="alert {{ classe.value }}" role="alert">
-                Texto colorido conforme valor do combobox
-            </div>
+      <app-curso [nomecurso]="nomeDoCurso"></app-curso>
+      <app-curso [nomedooutrocurso]="nomeDoOutroCurso"></app-curso>
 
-            <div class="alert" role="alert" [class.alert-success]="classe.value == 'alert-success'">
-                A simple success alert—check it out!
-            </div>
-            <div class="alert" role="alert" [class.alert-info]="classe.value == 'alert-info'">
-                A simple Info alert—check it out!
-            </div>
-            <div class="alert" role="alert" [class.alert-warning]="classe.value == 'alert-warning'">
-                A simple Alerta alert—check it out!
-            </div>
-            <div class="alert" role="alert" [class.alert-danger]="classe.value == 'alert-danger'">
-                A simple Erro alert—check it out!
-            </div>
-
-            <div class="alert alert-danger" role="alert"
-                [style.display]="classe.value == 'alert-danger' ? 'block' : 'none'">
-                Esse texto somente aparece em caso de erro.
-            </div>
-        </div>
-    </article>  -->
-
-    <!-- <article>
-        <h3>Event Binding</h3>
-        <div>
-            <button (click)="botaoClicado()" class="btn btn-primary"> Me clique</button>
-
-            <br><br>
-            <input #campoinput type="text" (keyup)="onKeyUp($event)" (keyup.enter)="salvarValor(campoinput.value)"
-                (blur)="salvarValor(campoinput.value)" />
-            <p>Valor atual: {{ valorAtual }}</p>
-            <p>Valor salvo: {{ valorSalvo }}</p>
-
-            <br>
-            <span (mouseover)="onMouseOverOut()" (mouseout)="onMouseOverOut()" [class.highlight]="isMouseOver">Passe o
-                mouse sobre mim</span>
-        </div>
-    </article> -->
-    <!-- <section class="two-way-binding">
-        <article>
-            <h3>Two-way data binding</h3>
-            <div>
-                <input #input type="text" [value]="nome" (input)="nome = input.value" />
-
-                <input type="text" [ngModel]="nome" (ngModelChange)="nome = $event" />
-
-                <input type="text" [(ngModel)]="nome">
-
-                <p>Você digitou: {{ nome }}</p>
-            </div>
-
-            <div>
-                <p>
-                    Meu nome é {{ pessoa.nome }}, tenho {{ pessoa.idade }} e moro na rua {{ pessoa.end.rua }},
-                    {{ pessoa.end.numero }}
-                </p>
-                <input type="text" [(ngModel)]="pessoa.nome" />
-                <input type="text" [(ngModel)]="pessoa.idade" />
-                <input type="text" [(ngModel)]="pessoa.end.rua" />
-                <input type="text" [(ngModel)]="pessoa.end.numero" />
-            </div>
-        </article>
-    </section> -->
-    <section class="input-output-properties">
-        <article>
-            <h3>
-                Input/Output Properties
-            </h3>
-
-            <app-curso [a]="nomeDoCurso"></app-curso>
-            <app-curso [b]="nomeDoOutroCurso"></app-curso>
-
-            <contador [valor]="valorInicial" (mudouValor)="onMudouValor($event)"></contador>
-        </article>
-    </section>
+      <app-contador
+        [valor]="valorInicial"
+        (mudouvalor)="onMudouValor($event)"
+      ></app-contador>
+    </article>
+  </section>
 </section>

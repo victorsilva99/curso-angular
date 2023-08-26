@@ -1,42 +1,37 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-data-binding',
   templateUrl: './data-binding.component.html',
-  styleUrls: ['./data-binding.component.css']
+  styleUrls: ['./data-binding.component.css'],
 })
-export class DataBindingComponent implements OnInit {
+export class DataBindingComponent {
+  url = 'http://www.google.com';
+  cursoAngular = true;
+  urlDaImagem = 'https://picsum.photos/id/237/200/300';
 
-  url: string = 'http://www.google.com';
-  cursoAngular: boolean = true;
-  urlDaImagem: string = 'https://picsum.photos/id/237/200/300';
+  valorAtual = '';
+  valorSalvo = '';
 
-  valorAtual: string = '';
-  valorSalvo: string = '';
+  isMouseOver = false;
 
-  isMouseOver: boolean = false;
-
-  nome: string = '';
+  nome = '';
 
   pessoa: any = {
     nome: 'def',
     idade: 2,
     end: {
       rua: 'def',
-      numero: 0
-    }
-  }
+      numero: 0,
+    },
+  };
 
-  nomeDoCurso: string = 'Angular';
-  nomeDoOutroCurso: string = 'C#';
+  nomeDoCurso = 'Angular';
+  nomeDoOutroCurso = 'C#';
 
   valorInicial = 10;
 
-  constructor() {
-
-  }
-
-  onMudouValor(evento: any) {
+  onMudouValor(evento: Event) {
     console.log(evento);
   }
 
@@ -65,8 +60,4 @@ export class DataBindingComponent implements OnInit {
   onMouseOverOut() {
     this.isMouseOver = !this.isMouseOver;
   }
-
-  ngOnInit(): void {
-  }
-
 }

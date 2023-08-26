@@ -1,13 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { CursosService } from './cursos.service';
 @Component({
   selector: 'app-cursos',
   templateUrl: './cursos.component.html',
-  styleUrls: ['./cursos.component.css']
+  styleUrls: ['./cursos.component.css'],
 })
-export class CursosComponent implements OnInit {
-
+export class CursosComponent {
   nomeSite: string;
   cursos: string[];
 
@@ -15,9 +14,4 @@ export class CursosComponent implements OnInit {
     this.nomeSite = 'http://www.google.com';
     this.cursos = this.cursosService.getCursos();
   }
-
-  ngOnInit(): void {
-
-  }
-
 }

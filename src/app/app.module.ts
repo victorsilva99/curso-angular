@@ -13,6 +13,7 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { InputPropertyComponent } from './input-property/input-property.component';
 import { OutputPropertieComponent } from './output-propertie/output-propertie.component';
 import { CicloComponent } from './ciclo/ciclo.component';
+import { DiretivaNgifComponent } from './diretiva-ngif/diretiva-ngif.component';
 
 @NgModule({
   declarations: [
@@ -22,16 +23,17 @@ import { CicloComponent } from './ciclo/ciclo.component';
     DataBindingComponent,
     InputPropertyComponent,
     OutputPropertieComponent,
-    CicloComponent
+    CicloComponent,
+    DiretivaNgifComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     CursosModule,
-    TooltipModule.forRoot()
+    TooltipModule.forRoot(),
   ],
   providers: [CursosService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
