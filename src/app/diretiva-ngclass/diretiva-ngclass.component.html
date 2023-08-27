@@ -1,0 +1,21 @@
+<h1>
+  <i
+    [class.bi-bookmark-star]="!meuFavorito"
+    [class.bi-bookmark-star-fill]="meuFavorito"
+    tabindex="0"
+    (click)="onClick()"
+    (keyup.enter)="onClick()"
+  ></i>
+</h1>
+
+<h1>
+  <i
+    [ngClass]="{
+      'bi-bookmark-star': !meuFavorito,
+      'bi-bookmark-star-fill': meuFavorito
+    }"
+    tabindex="1"
+    (click)="onClick()"
+    (keyup.enter)="onClick()"
+  ></i>
+</h1>
