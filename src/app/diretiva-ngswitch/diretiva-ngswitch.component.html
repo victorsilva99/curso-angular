@@ -1,1 +1,51 @@
-<p>diretiva-ngswitch works!</p>
+<nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [class.active]="aba === 'home'"
+            aria-current="page"
+            (click)="aba = 'home'"
+            (keyup.enter)="aba = 'home'"
+            tabindex="0"
+            role="button"
+          >
+            Home
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [class.active]="aba === 'mapa'"
+            aria-current="page"
+            (click)="aba = 'mapa'"
+            (keyup.enter)="aba = 'mapa'"
+            tabindex="1"
+            role="button"
+            >Mapa</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            [class.active]="aba === 'lista'"
+            aria-current="page"
+            (click)="aba = 'lista'"
+            (keyup.enter)="aba = 'lista'"
+            tabindex="2"
+            role="button"
+            >Lista</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container" [ngSwitch]="aba">
+  <p *ngSwitchCase="'mapa'">Modo Mapa ativado</p>
+  <p *ngSwitchCase="'lista'">Modo Lista ativado</p>
+  <p *ngSwitchDefault>Home</p>
+</div>
