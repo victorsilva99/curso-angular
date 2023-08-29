@@ -25,6 +25,7 @@ import { DiretivasCustomizadasComponent } from './diretivas-customizadas/diretiv
 import { HighlightMouseDirective } from './highlight-mouse.directive';
 import { HighlightDirective } from './highlight.directive';
 import { NgElseDirective } from './ng-else.directive';
+import { CursosServicesComponent } from './cursos-services/cursos-services.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { NgElseDirective } from './ng-else.directive';
     HighlightMouseDirective,
     HighlightDirective,
     NgElseDirective,
+    CursosServicesComponent,
   ],
   imports: [
     BrowserModule,
