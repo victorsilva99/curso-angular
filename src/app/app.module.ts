@@ -59,7 +59,7 @@ import { CursosService } from './cursos-services/cursos.service';
     TooltipModule.forRoot(),
     CriarCursoModule,
   ],
-  providers: [CursosService],
+  //providers: [CursosService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
