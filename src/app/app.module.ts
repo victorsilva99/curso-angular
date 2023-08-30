@@ -1,3 +1,4 @@
+import { CriarCursoModule } from './criar-curso/criar-curso.module';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -56,6 +57,7 @@ import { CursosService } from './cursos-services/cursos.service';
     FormsModule,
     CursosModule,
     TooltipModule.forRoot(),
+    CriarCursoModule,
   ],
   providers: [CursosService],
   bootstrap: [AppComponent],

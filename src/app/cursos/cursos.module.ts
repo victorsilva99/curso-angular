@@ -3,17 +3,12 @@ import { CommonModule } from '@angular/common';
 
 import { CursosComponent } from './cursos.component';
 import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
+import { CursosService } from '../cursos-services/cursos.service';
 
 @NgModule({
-  declarations: [
-    CursosComponent,
-    CursoDetalheComponent
-  ],
-  imports: [
-    CommonModule
-  ],
-  exports: [
-    CursosComponent
-  ]
+  declarations: [CursosComponent, CursoDetalheComponent],
+  imports: [CommonModule],
+  exports: [CursosComponent],
+  providers: [CursosService],
 })
-export class CursosModule { }
+export class CursosModule {}

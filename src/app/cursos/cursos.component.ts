@@ -4,6 +4,7 @@ import { CursosService } from '../cursos-services/cursos.service';
   selector: 'app-cursos',
   templateUrl: './cursos.component.html',
   styleUrls: ['./cursos.component.css'],
+  //providers: [CursosService],
 })
 export class CursosComponent {
   nomeSite: string;
