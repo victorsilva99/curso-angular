@@ -27,6 +27,7 @@ import { HighlightDirective } from './highlight.directive';
 import { NgElseDirective } from './ng-else.directive';
 import { CursosServicesComponent } from './cursos-services/cursos-services.component';
 import { CursosService } from './cursos-services/cursos.service';
+import { LogService } from './log.service';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,7 @@ import { CursosService } from './cursos-services/cursos.service';
     TooltipModule.forRoot(),
     CriarCursoModule,
   ],
-  //providers: [CursosService],
+  providers: [CursosService, LogService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
