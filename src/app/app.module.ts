@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { MeuPrimeiroComponent } from './meu-primeiro/meu-primeiro.component';
 import { MeuPrimeiro2Component } from './meu-primeiro2/meu-primeiro2.component';
 import { CursosModule } from './cursos/cursos.module';
-import { CursosService } from './cursos/cursos.service';
 import { DataBindingComponent } from './data-binding/data-binding.component';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { InputPropertyComponent } from './input-property/input-property.component';
@@ -26,6 +25,7 @@ import { HighlightMouseDirective } from './highlight-mouse.directive';
 import { HighlightDirective } from './highlight.directive';
 import { NgElseDirective } from './ng-else.directive';
 import { CursosServicesComponent } from './cursos-services/cursos-services.component';
+import { CursosService } from './cursos-services/cursos.service';
 
 @NgModule({
   declarations: [
