@@ -32,6 +32,9 @@ import { LogService } from './log.service';
 import { ExemplosPipesComponent } from './exemplos-pipes/exemplos-pipes.component';
 import { CamelCasePipe } from './exemplos-pipes/camel-case.pipe';
 import { SettingsService } from './settings.service';
+import { CommonModule } from '@angular/common';
+import { FiltroArrayPipe } from './filtro-array.pipe';
+import { FiltroArrayImpuroPipe } from './filtro-array-impuro.pipe';
 
 @NgModule({
   declarations: [
@@ -57,6 +60,7 @@ import { SettingsService } from './settings.service';
     CursosServicesComponent,
     ExemplosPipesComponent,
     CamelCasePipe,
+    FiltroArrayPipe,
   ],
   imports: [
     BrowserModule,
@@ -65,6 +69,8 @@ import { SettingsService } from './settings.service';
     CursosModule,
     TooltipModule.forRoot(),
     CriarCursoModule,
+    CommonModule,
+    FormsModule
   ],
   providers: [
     CursosService,
