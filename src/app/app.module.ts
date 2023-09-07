@@ -1,7 +1,8 @@
 import { CriarCursoModule } from './criar-curso/criar-curso.module';
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import '@angular/common/locales/global/pt';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -30,6 +31,7 @@ import { CursosService } from './cursos-services/cursos.service';
 import { LogService } from './log.service';
 import { ExemplosPipesComponent } from './exemplos-pipes/exemplos-pipes.component';
 import { CamelCasePipe } from './exemplos-pipes/camel-case.pipe';
+import { SettingsService } from './settings.service';
 
 @NgModule({
   declarations: [
@@ -64,7 +66,17 @@ import { CamelCasePipe } from './exemplos-pipes/camel-case.pipe';
     TooltipModule.forRoot(),
     CriarCursoModule,
   ],
-  providers: [CursosService, LogService],
+  providers: [
+    CursosService,
+    LogService,
+    //{provide: LOCALE_ID, useValue: 'pt' }
+    SettingsService,
+    {
+      provide: LOCALE_ID,
+      deps: [SettingsService],
+      useFactory: (settingsService: SettingsService) => settingsService.getLocale(),
+    }
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
