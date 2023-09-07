@@ -28,6 +28,7 @@ import { NgElseDirective } from './ng-else.directive';
 import { CursosServicesComponent } from './cursos-services/cursos-services.component';
 import { CursosService } from './cursos-services/cursos.service';
 import { LogService } from './log.service';
+import { ExemplosPipesComponent } from './exemplos-pipes/exemplos-pipes.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { LogService } from './log.service';
     HighlightDirective,
     NgElseDirective,
     CursosServicesComponent,
+    ExemplosPipesComponent,
   ],
   imports: [
     BrowserModule,
