@@ -22,4 +22,18 @@ export class ExemplosPipesComponent {
   addCurso(curso: string){
     this.livros.push(curso);
   }
+
+  obterCursos(){
+    if ( this.livros.length === 0 || this.filtro === undefined || this.filtro.trim() === '' ) {
+      return this.livros;
+     }
+
+     return this.livros.filter(
+      (v: string) => {
+        if(v.toLocaleLowerCase().indexOf(this.filtro.toLowerCase()) >= 0){
+        return true;
+      }
+      return false;
+  });
+  }
 }

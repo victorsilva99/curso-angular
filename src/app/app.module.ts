@@ -61,6 +61,7 @@ import { FiltroArrayImpuroPipe } from './filtro-array-impuro.pipe';
     ExemplosPipesComponent,
     CamelCasePipe,
     FiltroArrayPipe,
+    FiltroArrayImpuroPipe,
   ],
   imports: [
     BrowserModule,
